@@ -38,6 +38,7 @@ exports.non_zero_numbers_are_treated_as_true = function(test) {
 
 exports.zero_is_treated_as_false = function(test) {
 	test.equal(___, true_or_false(0));
+	test.equal(___, true_or_false(-0));
 	test.done();
 };
 
@@ -59,8 +60,18 @@ exports.empty_strings_are_treated_as_false = function(test) {
 };
 
 exports.objects_are_treated_as_true = function(test) {
-	test.equal(___, true_or_false("true"));
-	test.equal(___, true_or_false("false"));
+	test.equal(___, true_or_false(new Object(true)));
+	test.equal(___, true_or_false(new Object(false)));
 	test.done();
 };
 
+exports.boolean_primitives_wrapped_in_boolean_objects_behave_misleadingly = function(test) {
+	test.equal(___, true_or_false(new Boolean(true)));
+	test.equal(___, true_or_false(new Boolean(false)));
+	// Much better to use primitives instead...
+	test.equal(___, true_or_false(new Boolean(true).valueOf()));
+	test.equal(___, true_or_false(new Boolean(false).valueOf()));
+	test.equal(___, true_or_false(Boolean(true)));
+	test.equal(___, true_or_false(Boolean(false)));
+	test.done();
+};
