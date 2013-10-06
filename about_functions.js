@@ -45,7 +45,7 @@ exports.named_functions_can_be_called_before_they_are_defined = function(test) {
 
 exports.functions_without_an_explicit_return_value_return_undefined = function(test) {
   var dontForgetReturn = function(a, b) {
-  	a * b;
+    a * b;
   };
 
   test.equal(___, dontForgetReturn(5, 5));
@@ -69,7 +69,7 @@ exports.arguments_to_functions_can_be_explict_or_implict = function(test) {
 			result.push(arguments[0]);
 			result.push(arguments[0]);
 		}
-	  return result;
+    return result;
 	};
 
 	test.equal(___, repeat());
@@ -81,15 +81,15 @@ exports.functions_invoked_using_call_can_change_the_context = function(test) {
 	var reflection = function() {
 		var firstProperty = Object.keys(this)[0];
 		return this[firstProperty];
-	}
+	};
 
 	var person = {
 		name: "Dan"
-	}
+	};
 
 	var car = {
 		brand: "Ferrari"
-	}
+	};
 
 	test.equal(___, reflection.call(person));
 	test.equal(___, reflection.call(car));
