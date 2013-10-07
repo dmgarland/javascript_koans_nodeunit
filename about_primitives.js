@@ -24,6 +24,8 @@ exports.typeof_null_is_broken = function(test) {
 exports.numbers_are_also_primitives = function(test) {
 	test.equal(___, typeof(3));
 	test.equal(___, typeof(3.14));
+	test.equal(___, typeof(NaN));
+	test.equal(___, typeof(Infinity));
 	test.done();
 };
 

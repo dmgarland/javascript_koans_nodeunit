@@ -23,6 +23,28 @@ exports.functions_can_be_defined_as_an_object = function(test) {
   test.done();
 };
 
+exports.functions_can_have_properties_just_like_objects = function(test) {
+	function isEven(num) {
+		if(isEven.cache[num] === null) {
+      isEven.cache[num] = (num % 2 === 0 ? true : false);
+    }
+
+		return isEven.cache[num];
+	}
+
+	var result = isEven(2);
+
+	test.equal(___, result);
+	test.equal(___, isEven.cache[2]);
+	test.done();
+};
+
+exports.functions_length_is_the_number_of_expected_arguments = function(test) {
+  var multiply = function(x, y) { return x * y; };
+  test.equal(___, multiply.length);
+  test.done();
+};
+
 exports.functions_can_be_used_to_control_scope = function(test) {
 	(function(p) {
         var privateValue = "password";

@@ -43,7 +43,7 @@ exports.objects_can_dynamically_add_properties = function(test) {
 	test.done();
 };
 
-exports.object_properties_can_hold_function_objects = function(test) {
+exports.object_properties_can_hold_function_objects_eg_methods = function(test) {
 	person.toString = function() {
 		return this.name + " aged " + this.age + " likes watching " + this.favourite_telly;
 	};
