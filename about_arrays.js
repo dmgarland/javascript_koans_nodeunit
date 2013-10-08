@@ -29,7 +29,7 @@ exports.arrays_can_be_defined_using_new = function(test) {
 exports.subarrays_using_splice = function(test) {
   var daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   var workingWeek = daysOfWeek.splice(0, 5);
-  test.equal(___, workingWeek);
+  test.deepEqual(___, workingWeek);
   test.done();
 };
 
@@ -54,9 +54,9 @@ exports.arrays_can_be_used_as_a_queue = function(test) {
 	fruits.push("apple");
 	fruits.push("pear");
 
-	test.equal(___, fruits.unshift());
-	test.equal(___, fruits.unshift());
-	test.equal(___, fruits.unshift());
+	fruits.unshift();
+	test.equal(___, fruits[0]);
+	test.equal(___, fruits[1]);
 	test.done();
 };
 
