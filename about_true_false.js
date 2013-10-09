@@ -25,7 +25,7 @@ exports.undefined_is_treated_as_false = function(test) {
 };
 
 exports.null_is_treated_as_false = function(test) {
-	test.equal(___, true_or_false(undefined));
+	test.equal(___, true_or_false(null));
 	test.done();
 };
 
