@@ -54,7 +54,8 @@ exports.arrays_can_be_used_as_a_queue = function(test) {
 	fruits.push("apple");
 	fruits.push("pear");
 
-	fruits.unshift();
+	test.equal(___, fruits.shift());
+	test.equal(___, fruits.length);
 	test.equal(___, fruits[0]);
 	test.equal(___, fruits[1]);
 	test.done();
