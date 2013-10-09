@@ -118,7 +118,7 @@ exports.while_loop_with_conditional_test_at_the_end = function(test) {
 	test.done();
 };
 
-exports.while_loop_with_conditional_test_at_the_end = function(test) {
+exports.while_loop_with_conditional_using_break = function(test) {
 	var i = 0;
 	var sum = 0;
 
