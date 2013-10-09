@@ -62,8 +62,8 @@ exports.case_statements_with_switch = function(test) {
 	};
 
 	test.equal(___, switchDemo('a'));
-	test.equal(___, swtichDemo('b'));
-	test.equal(___, swtichDemo('c'));
+	test.equal(___, switchDemo('b'));
+	test.equal(___, switchDemo('c'));
 	test.done();
 };
 
