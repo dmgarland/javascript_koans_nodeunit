@@ -86,7 +86,7 @@ exports.forgetting_break_in_switch_leads_to_unexpected_results = function(test) 
 	};
 
 	test.equal(___, switchDemo('a'));
-	test.equal(___, swtichDemo('b'));
+	test.equal(___, switchDemo('b'));
 	test.done();
 };
 
