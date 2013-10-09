@@ -79,7 +79,7 @@ exports.strings_contains_with_index_of = function(test) {
 exports.strings_split_function = function(test) {
 	var path = '/categories/2/products/4';
 	var urlParams = path.split("/");
-	test.equals(___, urlParams);
+	test.deepEqual(___, urlParams);
 	test.done();
 };
 
@@ -88,7 +88,7 @@ exports.string_primitives_evaluate_code_with_eval = function(test) {
 	var resultFromObject = new String("2 + 2");
 
 	test.equals(___, eval(resultFromPrimitive));
-	test.equals(___, eval(resultFromObject));
+	test.deepEqual(___, eval(resultFromObject));
 	test.equals(___, eval(resultFromObject.valueOf()));
 	test.done();
 }
