@@ -134,7 +134,7 @@ exports.while_loop_with_conditional_using_break = function(test) {
 };
 
 exports.skip_to_next_while_loop_iteration_with_continue = function(test) {
-	i = 0;
+	var i = 0;
 	var results = [];
 
 	while(i < 10) {
@@ -143,7 +143,7 @@ exports.skip_to_next_while_loop_iteration_with_continue = function(test) {
 		results.push(i);
 	}
 
-	test.equal(___, results);
+	test.deepEqual(___, results);
 	test.done();
 };
 
@@ -155,7 +155,7 @@ exports.for_loop_iterator = function(test) {
 		if(fruits[i][0] === 'a') results.push(fruits[i]);
 	}
 
-	test.equal(___, results);
+	test.deepEqual(___, results);
 	test.done();
 };
 
@@ -183,8 +183,10 @@ exports.exception_handling_with_try_catch = function(test) {
 		throw "Some nasty exception";
 	}
 	catch(err) {
+		test.equal(___, err);
 		test.equal(___, err.name);
 		test.equal(___, err.message);
+		test.equal(___, typeof(err));
 	}
 	finally {
 		whateverHappens = true;
