@@ -23,6 +23,8 @@ exports.functions_can_be_defined_as_an_object = function(test) {
 
 exports.functions_can_have_properties_just_like_objects = function(test) {
 	function isEven(num) {
+    if(isEven.cache === undefined) isEven.cache = [];
+
 		if(isEven.cache[num] === null) {
       isEven.cache[num] = (num % 2 === 0 ? true : false);
     }
