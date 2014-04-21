@@ -49,6 +49,7 @@ exports.irrational_numbers_are_treated_as_false = function(test) {
 exports.non_empty_strings_are_treated_as_true = function(test) {
 	test.equal(___, true_or_false("true"));
 	test.equal(___, true_or_false("false"));
+	test.equal(___, true_or_false("0"));
 	test.done();
 };
 
