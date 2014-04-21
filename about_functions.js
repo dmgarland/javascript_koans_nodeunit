@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.functions_are_their_own_type = function(test) {
 	test.equal(___, typeof(function() {}));
 	test.done();
