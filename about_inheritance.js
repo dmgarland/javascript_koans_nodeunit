@@ -90,6 +90,18 @@ exports.test_objects_inherit_methods_from_parent_prototype = function(test) {
   test.done();
 }
 
+exports.test_duck_typing_is_good_enough = function(test) {
+  var animals = [dog, duck];
+  var length = 0;
+
+  for(var i = 0; i < animals.length; i++) {
+    length += animals[i].getName().length;
+  }
+
+  test.equal(___, length);
+  test.done();
+}
+
 exports.test_inherited_objects_can_change_behaviour = function(test) {
   Dog.prototype.getName = function() {
     return 5 * 5;
@@ -112,17 +124,5 @@ exports.test_inherited_objects_can_call_their_parent_method_statically = functio
 
   test.equal(___, dog.getName());
   test.equal(___, animal.getName.call(dog));
-  test.done();
-}
-
-exports.test_duck_typing_is_good_enough = function(test) {
-  var animals = [dog, duck];
-  var length = 0;
-
-  for(var i = 0; i < animals.length; i++) {
-    length += animals[i].getName().length;
-  }
-
-  test.equal(___, length);
   test.done();
 }
