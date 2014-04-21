@@ -110,11 +110,13 @@ exports.functions_invoked_using_call_can_change_the_context = function(test) {
 	};
 
 	var person = {
-		name: "Dan"
+		name: "Dan",
+    age: 30
 	};
 
 	var car = {
-		brand: "Ferrari"
+		brand: "Ferrari",
+    colour: "Yellow"
 	};
 
 	test.equal(___, reflection.call(person));
