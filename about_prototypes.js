@@ -96,8 +96,8 @@ exports.missing_properties_on_a_object_are_looked_up_on_the_prototype_chain = fu
 	test.equal(___, dan instanceof Instructor);
 	test.equal(___, dan.name);
 	test.equal(___, dan.greet());
-	test.equal(___, dan.hasOwnProperty('name')); // Belongs to the parent
-	test.equal(___, dan.hasOwnProperty('greet'));
+	test.equal(___, dan.hasOwnProperty('name'));
+	test.equal(___, dan.hasOwnProperty('greet')); // Belongs to the parent
 	test.done();
 };
 
