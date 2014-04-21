@@ -9,8 +9,8 @@ exports.objects_can_be_defined_using_new_keyword = function(test) {
 };
 
 exports.objects_are_different_objects_in_memory = function(test) {
-	var a = Object.new();
-	var b = Object.new();
+	var a = new Object();
+	var b = new Object();
 	test.equal(___, a === b);
 	test.done();
 };
@@ -28,7 +28,7 @@ exports.objects_properties_accessed_using_dot_notion = function(test) {
 
 exports.objects_defined_in_literal_notation_like_dictionaries = function(test) {
 	test.equal(___, person["name"]);
-	test.equal(___, person["30"]);
+	test.equal(___, person["age"]);
 	test.done();
 };
 
