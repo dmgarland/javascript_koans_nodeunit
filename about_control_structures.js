@@ -193,3 +193,22 @@ exports.exception_handling_with_try_catch = function(test) {
 	test.equal(___, whateverHappens);
 	test.done();
 };
+
+exports.exception_handling_with_try_catch_using_an_object = function(test) {
+	var whateverHappens;
+
+	try {
+		var my_amazing_error = {
+			name: "AmazingError",
+			message: "It appears that an amazing error occured."
+		}
+		throw my_amazing_error;
+	}
+	catch(err) {
+		test.equal(___, typeof(err));
+		test.equal(___, err.name);
+		test.equal(___, err.message);
+	}
+
+	test.done();
+};
