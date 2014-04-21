@@ -46,15 +46,19 @@ exports.functions_length_is_the_number_of_expected_arguments = function(test) {
 };
 
 exports.functions_can_be_used_to_control_scope = function(test) {
+  var publicValue = "My Amazing String";
+
 	(function(p) {
         var privateValue = "password";
-        test.equal(p, __, 'what is the value of pv?');
-        test.equal(typeof(privateValue), "__", "is privateValue available in this context?");
-        test.equal(typeof(publicValue), "__", "is publicValue available in this context?");
+        test.equal(___, privateValue, 'what is the value of privateValue?');
+        test.equal(___, publicValue, 'what is the value of publicValue?');
+        test.equal(___, p, 'what is the value of p?');
+        test.equal(___, typeof(privateValue), "is privateValue available in this context?");
+        test.equal(___, typeof(publicValue), "is publicValue available in this context?");
   })(publicValue);
 
-  test.equal(typeof(privateValue), "__", "is privateValue available in this context?");
-  test.equal(typeof(publicValue), "__", "is publicValue available in this context?");
+  test.equal(___, typeof(privateValue), "is privateValue available in this context?");
+  test.equal(___, typeof(publicValue), "is publicValue available in this context?");
   test.done();
 };
 
