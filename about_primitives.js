@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.a_variable_that_has_never_been_defined_is_undefined = function(test) {
 	test.equal(___, typeof(some_made_up_variable));
 	test.done();

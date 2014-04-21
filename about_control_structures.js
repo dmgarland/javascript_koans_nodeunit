@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.conditionals_using_if_statements = function(test) {
 	var ifDemo = function(x, y) {
 		var result;

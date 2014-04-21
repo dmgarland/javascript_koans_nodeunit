@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.arrays_are_just_objects = function(test) {
 	test.equal(___, typeof([]));
 	test.done();

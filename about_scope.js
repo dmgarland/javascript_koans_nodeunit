@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 global = 1;
 var local = 2;
 

@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 function true_or_false(value) {
 	if(value) {
 		return true;

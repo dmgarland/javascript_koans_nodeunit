@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 // Define a Constructor function for Animal Objects
 function Animal(name) {
   this.name = name;

@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.string_are_either_primitives_or_objects = function(test) {
 	test.equals(___, typeof(""));
 	test.equals(___, typeof(new String("apple")));

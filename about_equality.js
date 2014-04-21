@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.equal_equals_equals_performs_strict_comparison = function(test) {
 	test.equal(___, 3 === "3");
 	test.equal(___, 3 === 3.0);

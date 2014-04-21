@@ -1,5 +1,3 @@
-var ___ = "Fill me in!";
-
 exports.objects_have_a_prototype_object_that_share_propertes = function(test) {
 	test.equal(___, typeof(Object.prototype));
 	test.equal(___, typeof(Array.prototype));
