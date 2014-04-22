@@ -23,19 +23,22 @@ exports.functions_can_be_defined_as_an_object = function(test) {
 
 exports.functions_can_have_properties_just_like_objects = function(test) {
 	function isEven(num) {
-    if(isEven.cache === undefined) isEven.cache = [];
+    if(isEven.cache === undefined) isEven.cache = {};
 
-		if(isEven.cache[num] === null) {
+		if(isEven.cache[num] === undefined) {
       isEven.cache[num] = (num % 2 === 0 ? true : false);
     }
 
 		return isEven.cache[num];
 	}
 
+  var two = new Number(2);
 	var result = isEven(2);
+  var subsequentResult = isEven(2);
 
 	test.equal(___, result);
 	test.equal(___, isEven.cache[2]);
+  test.equal(___, result === subsequentResult);
 	test.done();
 };
 
