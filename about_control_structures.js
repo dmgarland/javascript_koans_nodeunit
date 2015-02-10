@@ -15,9 +15,9 @@ exports.conditionals_using_if_statements = function(test) {
 		return result;
 	};
 
-	test.equal(___, ifDemo(5, 7));
-	test.equal(___, ifDemo(5, 5));
-	test.equal(___, ifDemo(7, 5));
+	test.equal(-1, ifDemo(5, 7));
+	test.equal(0, ifDemo(5, 5));
+	test.equal(1, ifDemo(7, 5));
 	test.done();
 };
 
@@ -28,7 +28,7 @@ exports.short_conditionals_using_if_statements = function(test) {
 
 	if(x < y) tautology = true;
 
-	test.equal(___, tautology);
+	test.equal(true, tautology);
 	test.done();
 };
 
@@ -37,7 +37,7 @@ exports.single_line_conditionals = function(test) {
 	var y = 7;
 	var tautology = x < y ? true : false;
 
-	test.equal(___, tautology);
+	test.equal(true, tautology);
 	test.done();
 };
 
@@ -59,9 +59,9 @@ exports.case_statements_with_switch = function(test) {
 		return result;
 	};
 
-	test.equal(___, switchDemo('a'));
-	test.equal(___, switchDemo('b'));
-	test.equal(___, switchDemo('c'));
+	test.equal("You selected A", switchDemo('a'));
+	test.equal("You selected B", switchDemo('b'));
+	test.equal("I don't know", switchDemo('c'));
 	test.done();
 };
 
@@ -83,8 +83,8 @@ exports.forgetting_break_in_switch_leads_to_unexpected_results = function(test) 
 		return result;
 	};
 
-	test.equal(___, switchDemo('a'));
-	test.equal(___, switchDemo('b'));
+	test.equal("You selected B", switchDemo('a'));
+	test.equal("You selected B", switchDemo('b'));
 	test.done();
 };
 
@@ -94,11 +94,11 @@ exports.while_loop_with_conditional_test_at_the_start = function(test) {
 
 	while(i <= 10) {
 		sum += i;
-		i += 1;
+	  i += 1;
 	}
 
-	test.equal(___, i);
-	test.equal(___, sum);
+	test.equal(11, i);
+	test.equal(55, sum);
 	test.done();
 };
 
@@ -111,8 +111,8 @@ exports.while_loop_with_conditional_test_at_the_end = function(test) {
 		i += 1;
 	} while(i <= 10);
 
-	test.equal(___, i);
-	test.equal(___, sum);
+	test.equal(11, i);
+	test.equal(55, sum);
 	test.done();
 };
 
@@ -126,8 +126,8 @@ exports.while_loop_with_conditional_using_break = function(test) {
 		if(i >= 10) break;
 	}
 
-	test.equal(___, i);
-	test.equal(___, sum);
+	test.equal(10, i);
+	test.equal(45, sum);
 	test.done();
 };
 
@@ -141,7 +141,7 @@ exports.skip_to_next_while_loop_iteration_with_continue = function(test) {
 		results.push(i);
 	}
 
-	test.deepEqual(___, results);
+	test.deepEqual([1,3,5,7,9], results);
 	test.done();
 };
 
@@ -153,7 +153,7 @@ exports.for_loop_iterator = function(test) {
 		if(fruits[i][0] === 'a') results.push(fruits[i]);
 	}
 
-	test.deepEqual(___, results);
+	test.deepEqual(['apple'], results);
 	test.done();
 };
 
@@ -170,7 +170,7 @@ exports.for_loop_in_iterator = function(test) {
 		allYouNeedToKnowAboutDan.push(info.join(" "));
 	}
 
-	test.equal(___, allYouNeedToKnowAboutDan.join(", "));
+	test.equal('his name is Dan, his age is 30, his favouriteFruit is Mango', allYouNeedToKnowAboutDan.join(", "));
 	test.done();
 };
 
@@ -181,16 +181,16 @@ exports.exception_handling_with_try_catch = function(test) {
 		throw "Some nasty exception";
 	}
 	catch(err) {
-		test.equal(___, err);
-		test.equal(___, err.name);
-		test.equal(___, err.message);
-		test.equal(___, typeof(err));
+		test.equal("Some nasty exception", err);
+		test.equal(null, err.name);
+		test.equal(null, err.message);
+		test.equal('string', typeof(err));
 	}
 	finally {
 		whateverHappens = true;
 	}
 
-	test.equal(___, whateverHappens);
+	test.equal(true, whateverHappens);
 	test.done();
 };
 
@@ -205,9 +205,9 @@ exports.exception_handling_with_try_catch_using_an_object = function(test) {
 		throw my_amazing_error;
 	}
 	catch(err) {
-		test.equal(___, typeof(err));
-		test.equal(___, err.name);
-		test.equal(___, err.message);
+		test.equal('object', typeof(err));
+		test.equal("AmazingError", err.name);
+		test.equal("It appears that an amazing error occured.", err.message);
 	}
 
 	test.done();

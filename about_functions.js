@@ -1,23 +1,23 @@
 exports.functions_are_their_own_type = function(test) {
-	test.equal(___, typeof(function() {}));
+	test.equal('function', typeof(function() {}));
 	test.done();
 };
 
 exports.functions_are_invoked_using_parantheses_syntax = function(test) {
 	var result = function(x, y) { return x * y; }(5, 5);
-	test.equal(___, result);
+	test.equal(25, result);
 	test.done();
 };
 
 exports.functions_assigned_to_variables_can_be_called_by_variable_name = function(test) {
   var multiply = function(x, y) { return x *  y; };
-  test.equal(___, multiply(5, 5));
+  test.equal(25, multiply(5, 5));
   test.done();
 };
 
 exports.functions_can_be_defined_as_an_object = function(test) {
   var multiply = new Function("x", "y", "return x * y");
-  test.equal(___, multiply(5, 5));
+  test.equal(25, multiply(5, 5));
   test.done();
 };
 
@@ -36,15 +36,15 @@ exports.functions_can_have_properties_just_like_objects = function(test) {
 	var result = isEven(2);
   var subsequentResult = isEven(2);
 
-	test.equal(___, result);
-	test.equal(___, isEven.cache[2]);
-  test.equal(___, result === subsequentResult);
+	test.equal(true, result);
+	test.equal(true, isEven.cache[2]);
+  test.equal(true, result === subsequentResult);
 	test.done();
 };
 
 exports.functions_length_is_the_number_of_expected_arguments = function(test) {
   var multiply = function(x, y) { return x * y; };
-  test.equal(___, multiply.length);
+  test.equal(2, multiply.length);
   test.done();
 };
 
@@ -53,20 +53,20 @@ exports.functions_can_be_used_to_control_scope = function(test) {
 
 	(function(p) {
         var privateValue = "password";
-        test.equal(___, privateValue, 'what is the value of privateValue?');
-        test.equal(___, publicValue, 'what is the value of publicValue?');
-        test.equal(___, p, 'what is the value of p?');
-        test.equal(___, typeof(privateValue), "is privateValue available in this context?");
-        test.equal(___, typeof(publicValue), "is publicValue available in this context?");
+        test.equal("password", privateValue, 'what is the value of privateValue?');
+        test.equal("My Amazing String", publicValue, 'what is the value of publicValue?');
+        test.equal(p, p, 'what is the value of p?');
+        test.equal('string', typeof(privateValue), "is privateValue available in this context?");
+        test.equal('string', typeof(publicValue), "is publicValue available in this context?");
   })(publicValue);
 
-  test.equal(___, typeof(privateValue), "is privateValue available in this context?");
-  test.equal(___, typeof(publicValue), "is publicValue available in this context?");
+  test.equal('undefined', typeof(privateValue), "is privateValue available in this context?");
+  test.equal('string', typeof(publicValue), "is publicValue available in this context?");
   test.done();
 };
 
 exports.named_functions_can_be_called_before_they_are_defined = function(test) {
-	test.equal(___, my_amazing_multiply(5, 5));
+	test.equal(25, my_amazing_multiply(5, 5));
 
 	function my_amazing_multiply(x, y) { return x * y; }
 	test.done();
@@ -77,7 +77,7 @@ exports.functions_without_an_explicit_return_value_return_undefined = function(t
     a * b;
   };
 
-  test.equal(___, dontForgetReturn(5, 5));
+  test.equal(null, dontForgetReturn(5, 5));
   test.done();
 };
 
@@ -86,7 +86,7 @@ exports.arguments_are_not_enforced = function(test) {
     return "Hello " + name;
 	};
 
-	test.equal("Hello", sayHello());
+	test.equal("Hello undefined", sayHello());
 	test.equal("Hello Dan", sayHello("Dan"));
 	test.done();
 };
@@ -101,8 +101,8 @@ exports.arguments_to_functions_can_be_explict_or_implict = function(test) {
     return result;
 	};
 
-	test.equal(___, repeat());
-	test.equal(___, repeat("hello"));
+	test.deepEqual([], repeat());
+  test.deepEqual(["hello", "hello"], repeat("hello"));
 	test.done();
 };
 
@@ -122,8 +122,8 @@ exports.functions_invoked_using_call_can_change_the_context = function(test) {
     colour: "Yellow"
 	};
 
-	test.equal(___, reflection.call(person));
-	test.equal(___, reflection.call(car));
+	test.equal("Dan", reflection.call(person));
+	test.equal("Ferrari", reflection.call(car));
 	test.done();
 };
 
@@ -138,18 +138,18 @@ exports.singleton_functions_can_be_defined_on_single_objects = function(test) {
 
 	numbers.double();
 
-	test.equal(___, numbers[0]);
-	test.equal(___, numbers[1]);
-	test.equal(___, numbers[2]);
-	test.equal(___, numbers[3]);
-	test.equal(___, numbers[4]);
+	test.equal(2, numbers[0]);
+	test.equal(4, numbers[1]);
+	test.equal(6, numbers[2]);
+	test.equal(8, numbers[3]);
+	test.equal(10, numbers[4]);
 
 	var other_numbers = [1, 2, 3, 4, 5];
 	try {
 		other_numbers.double();
 	}
 	catch(err) {
-		test.equal(___, err.name);
+		test.equal('TypeError', err.name);
 	}
 	test.done();
 };
