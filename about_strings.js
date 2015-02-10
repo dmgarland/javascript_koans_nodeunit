@@ -61,6 +61,29 @@ exports.strings_subarrays_with_slice = function(test) {
 	test.done();
 };
 
+exports.strings_subarrays_with_substring = function(test) {
+	var name = "Joe Bloggs";
+	test.equals(___, name.substring(0, 1));
+	test.equals(___, name.substring(0, 100));
+	test.equals(___, name.substring(3, 0));
+	test.equals(___, name.substring(4, 10));
+	test.equals(___, name.substring(10, 4));
+	test.equals(___, name.substring(0, -1));
+	test.done();
+};
+
+exports.strings_subarrays_with_substr = function(test) {
+	var name = "Joe Bloggs";
+	test.equals(___, name.substr(0, 1));
+	test.equals(___, name.substr(0, 100));
+	test.equals(___, name.substr(3, 0));
+	test.equals(___, name.substr(4, 10));
+	test.equals(___, name.substr(10, 4));
+	test.equals(___, name.substr(0, -1));
+	test.equals(___, name.substr(4));
+	test.done();
+};
+
 exports.strings_substitution_with_replace = function(test) {
 	var priceLabel = "Price is X".replace("X", "£19.99");
 	test.equals("Price is £19.99", priceLabel);
