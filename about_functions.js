@@ -101,8 +101,8 @@ exports.arguments_to_functions_can_be_explict_or_implict = function(test) {
     return result;
 	};
 
-	test.equal(___, repeat());
-	test.equal(___, repeat("hello"));
+	test.deepEqual(___, repeat());
+	test.deepEqual(___, repeat("hello"));
 	test.done();
 };
 
