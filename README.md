@@ -8,6 +8,6 @@ RUNNING
 =======
 
 ```chmod u+x jskoans```
-```./jskoans <name_of_test.js>```
+```./js_koans <name_of_test.js>```
 
 Have fun!
