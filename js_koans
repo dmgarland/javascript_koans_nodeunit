@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-var reporter = require('nodeunit').reporters.koans;
+console.log(require('nodeunit').reporters);
+var reporter = require('nodeunit').reporters.default;
 var koan = process.argv.slice(2);
 reporter.run(koan);
