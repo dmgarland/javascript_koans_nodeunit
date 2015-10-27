@@ -86,8 +86,8 @@ exports.arguments_are_not_enforced = function(test) {
     return "Hello " + name;
 	};
 
-	test.equal("Hello", sayHello());
-	test.equal("Hello Dan", sayHello("Dan"));
+	test.equal(___, sayHello());
+	test.equal(___, sayHello("Dan"));
 	test.done();
 };
 
