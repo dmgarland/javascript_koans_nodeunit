@@ -42,7 +42,7 @@ exports.primitives_have_no_prototype_because_they_are_not_objects = function(tes
 
 	for(var primitive in data_types) {
 		try {
-			Object.getPrototypeOf(primitive);
+			Object.getPrototypeOf(data_types[primitive]);
 		}
 		catch(err) {
 			test.equal(___, err.name);
