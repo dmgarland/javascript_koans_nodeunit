@@ -38,11 +38,11 @@ exports.booleans_are_also_primitives = function(test) {
 };
 
 exports.primitives_have_no_prototype_because_they_are_not_objects = function(test) {
-	var data_types = [undefined, null, true, 3, "hello"];
+	var dataTypes = [undefined, null, true, 3, "hello"];
 
-	for(var primitive in data_types) {
+	for(var primitive in dataTypes) {
 		try {
-			Object.getPrototypeOf(primitive);
+			Object.getPrototypeOf(dataTypes[primitive]);
 		}
 		catch(err) {
 			test.equal(___, err.name);
